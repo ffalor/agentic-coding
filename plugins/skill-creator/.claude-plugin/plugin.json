@@ -1,0 +1,8 @@
+{
+  "name": "skill-creator",
+  "description": "Create and manage Claude Code skills with templates",
+  "version": "1.0.0",
+  "author": {
+    "name": "Agentic Coding Team"
+  }
+}

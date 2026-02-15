@@ -1,0 +1,91 @@
+{
+  "name": "agentic-coding",
+  "owner": {
+    "name": "ffalor",
+    "email": "team@example.com"
+  },
+  "plugins": [
+    {
+      "name": "doc-coauthoring",
+      "source": "./plugins/doc-coauthoring",
+      "description": "AI-powered documentation co-authoring with style consistency",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "keywords": [
+        "documentation",
+        "ai",
+        "writing"
+      ],
+      "category": "productivity"
+    },
+    {
+      "name": "conventional-commits",
+      "source": "./plugins/conventional-commits",
+      "description": "Enforce conventional commit messages with validation",
+      "version": "1.0.0",
+      "author": {
+        "name": "ffalor"
+      },
+      "keywords": [
+        "git",
+        "commits",
+        "conventional"
+      ],
+      "category": "development"
+    },
+    {
+      "name": "skill-creator",
+      "source": "./plugins/skill-creator",
+      "description": "Create and manage Claude Code skills with templates",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "keywords": [
+        "skills",
+        "templates",
+        "creation"
+      ],
+      "category": "development"
+    },
+    {
+      "name": "agent-browser",
+      "source": "./plugins/agent-browser",
+      "description": "Automates browser interactions for web testing, form filling, and data extraction",
+      "version": "1.0.0",
+      "author": {
+        "name": "ffalor"
+      },
+      "keywords": [
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "category": "development"
+    },
+    {
+      "name": "gopls-lsp",
+      "description": "Go language server for code intelligence and refactoring",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "source": "./plugins/gopls-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "gopls": {
+          "command": "gopls",
+          "extensionToLanguage": {
+            ".go": "go"
+          }
+        }
+      }
+    }
+  ]
+}
