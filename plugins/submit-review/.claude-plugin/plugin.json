@@ -1,0 +1,8 @@
+{
+  "name": "submit-review",
+  "description": "Post code reviews with line-level comments to GitHub PRs via the gh CLI",
+  "author": {
+    "name": "Frank Falor",
+    "url": "https://github.com/ffalor"
+  }
+}
