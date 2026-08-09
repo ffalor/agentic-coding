@@ -1,0 +1,4 @@
+# Python bytecode. Plugin scripts invoked as modules (python -m scripts.foo) write
+# these into the plugin's scripts/ directory.
+__pycache__/
+*.py[cod]

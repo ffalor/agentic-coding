@@ -1,0 +1,8 @@
+{
+  "name": "terraform-framework-reference",
+  "description": "Local, version-matched copy of the Terraform Plugin Framework and Plugin Testing documentation. Sync once with /terraform-framework-reference:update, then read the exact upstream docs for the framework version your provider compiles against.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ffalor"
+  }
+}

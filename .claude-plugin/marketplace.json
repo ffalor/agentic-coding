@@ -150,6 +150,23 @@
         "code-review"
       ],
       "category": "development"
+    },
+    {
+      "name": "terraform-framework-reference",
+      "source": "./plugins/terraform-framework-reference",
+      "description": "Local, version-matched copy of the Terraform Plugin Framework and plugin-testing docs. Syncs the exact .mdx pages your provider's go.mod compiles against, so lookups are verbatim and offline.",
+      "version": "1.0.0",
+      "author": {
+        "name": "ffalor"
+      },
+      "keywords": [
+        "terraform",
+        "provider",
+        "plugin-framework",
+        "documentation",
+        "go"
+      ],
+      "category": "development"
     }
   ]
 }
