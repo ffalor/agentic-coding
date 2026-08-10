@@ -18,14 +18,19 @@ write-only arguments, `Float32`/`Int32` types), so which version is on disk matt
 ## Locate the docs
 
 ```bash
-DOCS=$(ls -d ~/.claude/plugins/data/terraform-framework-reference-*/ 2>/dev/null | head -1)
-echo "$DOCS"
+DOCS="${CLAUDE_PLUGIN_DATA}"
+ls "$DOCS/INDEX.md"
 ```
 
-If that prints nothing, or `$DOCS/INDEX.md` is missing, the docs have not been synced
-yet. Tell the user to run `/terraform-framework-reference:update` and stop. The rendered
-site at `developer.hashicorp.com` only serves the newest version, so it is not a
-substitute.
+If `$DOCS` is empty, the placeholder was not substituted, which means the plugin is not
+installed. Say so and stop. Do not fall back to globbing
+`~/.claude/plugins/data/terraform-framework-reference-*`: that path embeds the
+marketplace name, so a directory left behind by an older marketplace name would match and
+serve stale docs that no longer track what `/terraform-framework-reference:update` writes.
+
+If `$DOCS` resolves but `INDEX.md` is missing, the docs have not been synced yet. Tell the
+user to run `/terraform-framework-reference:update` and stop. The rendered site at
+`developer.hashicorp.com` only serves the newest version, so it is not a substitute.
 
 ## Find the right page
 

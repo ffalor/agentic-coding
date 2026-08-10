@@ -7,8 +7,8 @@ how the Framework works.
 ## Install
 
 ```
-/plugin marketplace add ffalor/agentic-coding
-/plugin install terraform-framework-reference@agentic-coding
+/plugin marketplace add ffalor/ffalor-plugins
+/plugin install terraform-framework-reference@ffalor-plugins
 ```
 
 No documentation ships with the plugin. Sync it once per provider repository:
@@ -25,9 +25,8 @@ topic and reads the one page it needs, with no network access.
 
 ## What you get
 
-Documentation lands in the plugin's persistent data directory,
-`~/.claude/plugins/data/terraform-framework-reference-agentic-coding/`, which survives
-plugin updates:
+Documentation lands in the plugin's persistent data directory, `${CLAUDE_PLUGIN_DATA}`,
+which survives plugin updates:
 
 ```
 INDEX.md          every page's path, title and summary
@@ -50,6 +49,9 @@ publishes.
 - The SDKv2-to-Framework migration guide is not synced. It only matters when porting a
   provider off SDKv2.
 - Uninstalling the plugin deletes the data directory unless you pass `--keep-data`.
+- `${CLAUDE_PLUGIN_DATA}` resolves to `~/.claude/plugins/data/<plugin>-<marketplace>/`, so
+  renaming the marketplace points the plugin at a fresh directory and orphans the old one.
+  Re-run the sync, then delete the stale directory.
 
 ## Requirements
 

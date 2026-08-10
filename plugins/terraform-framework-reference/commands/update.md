@@ -13,17 +13,19 @@ writes the `.mdx` files plus `INDEX.md` and `MANIFEST.json` into the plugin's pe
 data directory.
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/scripts/sync_docs.py" --project "$(pwd)"
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/sync_docs.py" \
+  --project "$(pwd)" \
+  --data-dir "${CLAUDE_PLUGIN_DATA}"
 ```
 
-If that path does not exist because the variable was not expanded, find the script and
-resolve the data directory by hand, then pass it explicitly:
+Both paths must be passed as arguments. Claude Code substitutes these two placeholders
+into this file's text before you read it, but it does not export them as environment
+variables to Bash, so the script cannot look them up itself.
 
-```bash
-SCRIPT=$(ls -d ~/.claude/plugins/cache/*/terraform-framework-reference/*/scripts/sync_docs.py 2>/dev/null | sort -V | tail -1)
-DATA=$(ls -d ~/.claude/plugins/data/terraform-framework-reference-*/ 2>/dev/null | head -1)
-python3 "$SCRIPT" --project "$(pwd)" --data-dir "${DATA:-$HOME/.claude/plugins/data/terraform-framework-reference-agentic-coding}"
-```
+If either placeholder reaches the shell unexpanded, the plugin is not installed. Say so
+and stop rather than guessing a path: a hand-built path under
+`~/.claude/plugins/data/` embeds the marketplace name, and reading a directory left over
+from an older marketplace name would silently serve stale docs.
 
 Requires `git`, `python3`, and `go` on PATH, and network access to github.com. The sync
 takes a few seconds and lands about 1.3 MB across roughly 166 files.
@@ -35,6 +37,7 @@ pass both explicitly rather than guessing:
 
 ```bash
 python3 "${CLAUDE_PLUGIN_ROOT}/scripts/sync_docs.py" \
+  --data-dir "${CLAUDE_PLUGIN_DATA}" \
   --framework-version v1.17.x --testing-version v1.14.x
 ```
 

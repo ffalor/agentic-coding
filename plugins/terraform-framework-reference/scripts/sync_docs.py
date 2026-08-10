@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import shutil
 import subprocess
@@ -200,8 +199,8 @@ def main() -> int:
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=os.environ.get("CLAUDE_PLUGIN_DATA"),
-        help="where to write docs (default: $CLAUDE_PLUGIN_DATA)",
+        required=True,
+        help="where to write docs; pass ${CLAUDE_PLUGIN_DATA} from the skill",
     )
     parser.add_argument(
         "--framework-version",
@@ -212,13 +211,6 @@ def main() -> int:
         help="override the plugin-testing version, e.g. v1.14.x",
     )
     args = parser.parse_args()
-
-    if not args.data_dir:
-        print(
-            "error: --data-dir not given and $CLAUDE_PLUGIN_DATA is unset",
-            file=sys.stderr,
-        )
-        return 2
 
     data_dir: Path = args.data_dir.expanduser()
     project: Path = args.project.expanduser().resolve()
