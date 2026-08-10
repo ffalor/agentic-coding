@@ -1,8 +1,16 @@
 {
   "name": "submit-review",
   "description": "Post code reviews with line-level comments to GitHub PRs via the gh CLI",
+  "version": "1.0.0",
   "author": {
     "name": "Frank Falor",
     "url": "https://github.com/ffalor"
-  }
+  },
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "pr",
+    "review",
+    "code-review"
+  ]
 }

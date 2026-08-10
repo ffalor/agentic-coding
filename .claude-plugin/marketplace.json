@@ -1,148 +1,37 @@
 {
-  "name": "agentic-coding",
+  "name": "ffalor-plugins",
+  "description": "Personal Claude Code plugin marketplace. Holds plugins ffalor maintains, plus vetted copies of third-party plugins.",
   "owner": {
     "name": "ffalor",
-    "email": "team@example.com"
+    "url": "https://github.com/ffalor"
   },
   "plugins": [
     {
-      "name": "doc-coauthoring",
-      "source": "./plugins/doc-coauthoring",
-      "description": "AI-powered documentation co-authoring with style consistency",
-      "version": "1.0.0",
+      "name": "session-insights",
+      "source": "./plugins/session-insights",
+      "description": "Mine session history for durable improvements: extract non-obvious learnings into AGENTS.md files, and analyze usage patterns to suggest new skills, plugins, and agents.",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "ffalor",
+        "url": "https://github.com/ffalor"
       },
+      "license": "MIT",
       "keywords": [
-        "documentation",
-        "ai",
-        "writing"
+        "sessions",
+        "agents-md",
+        "workflow",
+        "retrospective"
       ],
       "category": "productivity"
-    },
-    {
-      "name": "conventional-commits",
-      "source": "./plugins/conventional-commits",
-      "description": "Enforce conventional commit messages with validation",
-      "version": "1.0.0",
-      "author": {
-        "name": "ffalor"
-      },
-      "keywords": [
-        "git",
-        "commits",
-        "conventional"
-      ],
-      "category": "development"
-    },
-    {
-      "name": "skill-creator",
-      "source": "./plugins/skill-creator",
-      "description": "Create and manage Claude Code skills with templates",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "keywords": [
-        "skills",
-        "templates",
-        "creation"
-      ],
-      "category": "development"
-    },
-    {
-      "name": "agent-browser",
-      "source": "./plugins/agent-browser",
-      "description": "Automates browser interactions for web testing, form filling, and data extraction",
-      "version": "1.0.0",
-      "author": {
-        "name": "ffalor"
-      },
-      "keywords": [
-        "browser",
-        "automation",
-        "testing"
-      ],
-      "category": "development"
-    },
-    {
-      "name": "gopls-lsp",
-      "description": "Go language server for code intelligence and refactoring",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/gopls-lsp",
-      "category": "development",
-      "strict": false,
-      "lspServers": {
-        "gopls": {
-          "command": "gopls",
-          "extensionToLanguage": {
-            ".go": "go"
-          }
-        }
-      }
-    },
-    {
-      "name": "claude-md-management",
-      "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/claude-md-management",
-      "category": "productivity",
-      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management"
-    },
-    {
-      "name": "code-simplifier",
-      "description": "Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality. Focuses on recently modified code.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/code-simplifier",
-      "category": "productivity",
-      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier"
-    },
-    {
-      "name": "plugin-dev",
-      "description": "Comprehensive toolkit for developing Claude Code plugins. Includes 7 expert skills covering hooks, MCP integration, commands, agents, and best practices. AI-assisted plugin creation and validation.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/plugin-dev",
-      "category": "development",
-      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/plugin-dev"
-    },
-    {
-      "name": "pr-review-toolkit",
-      "description": "Comprehensive PR review agents specializing in comments, tests, error handling, type design, code quality, and code simplification",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/pr-review-toolkit",
-      "category": "productivity",
-      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/pr-review-toolkit"
     },
     {
       "name": "submit-review",
       "source": "./plugins/submit-review",
       "description": "Post code reviews with line-level comments to GitHub PRs via the gh CLI",
-      "version": "1.0.0",
       "author": {
-        "name": "ffalor"
+        "name": "Frank Falor",
+        "url": "https://github.com/ffalor"
       },
+      "license": "MIT",
       "keywords": [
         "github",
         "pr",
@@ -155,10 +44,11 @@
       "name": "terraform-framework-reference",
       "source": "./plugins/terraform-framework-reference",
       "description": "Local, version-matched copy of the Terraform Plugin Framework and plugin-testing docs. Syncs the exact .mdx pages your provider's go.mod compiles against, so lookups are verbatim and offline.",
-      "version": "1.0.0",
       "author": {
-        "name": "ffalor"
+        "name": "ffalor",
+        "url": "https://github.com/ffalor"
       },
+      "license": "MIT",
       "keywords": [
         "terraform",
         "provider",
@@ -167,6 +57,23 @@
         "go"
       ],
       "category": "development"
+    },
+    {
+      "name": "track-implementation",
+      "source": "./plugins/track-implementation",
+      "description": "Implement a spec while maintaining a running implementation-notes.html that records design decisions, deliberate deviations, tradeoffs, and open questions.",
+      "author": {
+        "name": "ffalor",
+        "url": "https://github.com/ffalor"
+      },
+      "license": "MIT",
+      "keywords": [
+        "implementation",
+        "notes",
+        "spec",
+        "tracking"
+      ],
+      "category": "productivity"
     }
   ]
 }

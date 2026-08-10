@@ -1,0 +1,16 @@
+{
+  "name": "track-implementation",
+  "description": "Implement a spec while maintaining a running implementation-notes.html that records design decisions, deliberate deviations, tradeoffs, and open questions.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ffalor",
+    "url": "https://github.com/ffalor"
+  },
+  "license": "MIT",
+  "keywords": [
+    "implementation",
+    "notes",
+    "spec",
+    "tracking"
+  ]
+}
